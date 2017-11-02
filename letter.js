@@ -15,9 +15,11 @@ var Letter = function() {
 	this.guessed = [];
 	this.remained = 10;
 
-	this.initialize = function() {
+	this.initGame = function() {
 		this.word = new Word();
 		this.score = new Score();
+
+		this.newGame();
 	}
 
 	this.newGame = function() {
@@ -38,14 +40,12 @@ var Letter = function() {
 			}
 		}
 
-		this.showWord();
-	}
-
-	this.showWord = function() {
-		console.log(this.usrWord.toString().replace(/,/g, " ") + "\n");
+		this.showWord("\n");
 	}
 
 	this.setGuess = function(x) {
+		console.log("");
+
 		if(this.guessed.indexOf(x) === -1) {
 			this.guessed.push(x);
 
@@ -59,13 +59,13 @@ var Letter = function() {
 					}
 				}
 
-				this.showWord();
+				this.showWord("");
 				console.log("CORRECT!!!\n");				
 			}
 			else {
 				this.remained--;
 
-				this.showWord();
+				this.showWord("");
 				console.log("INCORRECT!!!\n");
 				console.log(this.remained + " guesses remaining!!!\n");				
 			}
@@ -88,6 +88,15 @@ var Letter = function() {
 		}
 
 		return false;
+	}
+
+	this.showWord = function(crlf) {
+		console.log(crlf + this.usrWord.toString().replace(/,/g, " ") + "\n");
+	}	
+
+	this.showResult = function() {
+		// console.log
+
 	}
 }
 

@@ -7,9 +7,7 @@ var Letter = require("./letter.js");
 
 var letter = new Letter();
 
-letter.initialize();
-letter.newGame();
-
+letter.initGame();
 goHangman();
 
 function goHangman() {
@@ -28,12 +26,10 @@ function goHangman() {
 				name: "guess"
 			}
 		]).then(function(input) {
-			console.log("");
-
 			letter.setGuess(input.guess);
 
 			if(letter.isDone()) {
-				// tryAgain();
+				tryAgain();
 			}
 			else {
 				goHangman();
@@ -41,16 +37,22 @@ function goHangman() {
 		});
 }
 
-// function tryAgain() {
-// 	inquirer
-// 		.prompt([
-// 			{
-// 				type: "confirm",
-// 				message: "",
-// 				name: ""
-// 			}
-// 		]).then(function(input) {
-
-// 		});
-// }
+function tryAgain() {
+	inquirer
+		.prompt([
+			{
+				type: "confirm",
+				message: "Do you want to try again? ",
+				name: "again"
+			}
+		]).then(function(input) {
+			if(input.again === true) {
+				letter.newGame();
+				goHangman();
+			}
+			else {
+				letter.showResult();
+			}
+		});
+}
 
