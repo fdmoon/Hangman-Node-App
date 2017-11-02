@@ -1,0 +1,28 @@
+{
+  "name": "hangman-node-app",
+  "version": "1.0.0",
+  "description": "A hangman command-line game using constructor functions",
+  "main": "hangman.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fdmoon/Hangman-Node-App.git"
+  },
+  "keywords": [
+    "Hangman",
+    "Node.js",
+    "Command-line",
+    "Game"
+  ],
+  "author": "Felix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fdmoon/Hangman-Node-App/issues"
+  },
+  "homepage": "https://github.com/fdmoon/Hangman-Node-App#readme",
+  "dependencies": {
+    "inquirer": "^3.3.0"
+  }
+}
