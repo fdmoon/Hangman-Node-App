@@ -14,6 +14,13 @@ var Score = function() {
 			this.losses++;
 		}
 	}
+
+	this.showResult = function() {
+		console.log("\n***************************************");
+		console.log("* wins: " + this.wins);
+		console.log("* losses: " + this.losses);
+		console.log("***************************************\n");
+	}
 }
 
 module.exports = Score;

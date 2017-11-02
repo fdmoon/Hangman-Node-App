@@ -52,6 +52,7 @@ function tryAgain() {
 			}
 			else {
 				letter.showResult();
+				console.log("Game Over! See you soon~\n");
 			}
 		});
 }

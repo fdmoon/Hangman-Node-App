@@ -95,8 +95,7 @@ var Letter = function() {
 	}	
 
 	this.showResult = function() {
-		// console.log
-
+		this.score.showResult();
 	}
 }
 
