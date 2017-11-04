@@ -4,6 +4,7 @@
 
 var Word = require("./word.js");
 var Score = require("./score.js");
+var colors = require('colors');
 
 var Letter = function() {
 	this.word = {};
@@ -60,29 +61,29 @@ var Letter = function() {
 				}
 
 				this.showWord("");
-				console.log("CORRECT!!!\n");				
+				console.log("CORRECT!!!\n".green);				
 			}
 			else {
 				this.remained--;
 
 				this.showWord("");
-				console.log("INCORRECT!!!\n");
+				console.log("INCORRECT!!!\n".red);
 				console.log(this.remained + " guesses remaining!!!\n");				
 			}
 		}
 		else {
-			console.log(x + " is the letter you've already guessed!\n");
+			console.log(x + " is the letter you've already guessed!\n".yellow);
 		}				
 	}
 
 	this.isDone = function() {
 		if(this.answer.toString() === this.usrWord.toString()) {
-			console.log("You got it right!\n");
+			console.log("You got it right!\n".rainbow);
 			this.score.setResult(true);
 			return true;
 		}
 		else if(this.remained <= 0) {
-			console.log("You failed!\n");
+			console.log("You failed!\n".rainbow);
 			this.score.setResult(false);
 			return true;
 		}

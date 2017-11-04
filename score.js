@@ -16,10 +16,10 @@ var Score = function() {
 	}
 
 	this.showResult = function() {
-		console.log("\n***************************************");
+		console.log("\n***************************************".rainbow);
 		console.log("* wins: " + this.wins);
 		console.log("* losses: " + this.losses);
-		console.log("***************************************\n");
+		console.log("***************************************\n".rainbow);
 	}
 }
 

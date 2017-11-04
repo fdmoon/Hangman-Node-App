@@ -4,6 +4,7 @@
 
 var inquirer = require("inquirer");
 var Letter = require("./letter.js");
+var colors = require('colors');
 
 var letter = new Letter();
 
@@ -52,7 +53,7 @@ function tryAgain() {
 			}
 			else {
 				letter.showResult();
-				console.log("Game Over! See you soon~\n");
+				console.log("Game Over! See you soon~".inverse);
 			}
 		});
 }
